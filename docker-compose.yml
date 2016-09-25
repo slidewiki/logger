@@ -1,0 +1,17 @@
+
+logger:
+  image: slidewiki/logger
+  restart: on-failure:5
+  ports:
+    - "24224:24224"
+  volumes:
+    - /var/log/slidewiki:/fluentd/log
+  privileged: true
+
+// example
+platform:
+  image: slidewiki/platform
+  log_driver: fluentd
+  log_opt:
+    fluentd-address: "localhost:24224"
+    tag: "slidewiki.platform"
