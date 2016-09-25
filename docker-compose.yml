@@ -8,7 +8,7 @@ logger:
     - /var/log/slidewiki:/fluentd/log
   privileged: true
 
-// example
+# example
 platform:
   image: slidewiki/platform
   log_driver: fluentd
